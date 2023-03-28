@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" http-equiv="Content-Type" content="text/html" />
+</head>
+
+<body>
+	<center><b><u>EJEMPLO DE JAVASCRIPT PARA OBTENER INFORMACI&OacuteN DEL CLIENTE</u></b></center>
+	<h4>Datos del navegador del usuario</h4>
+	<div class="marco2">
+		<!-- Nombre y version del navegador -->
+		<script type="text/javascript">
+			//<![CDATA[ Datos de caracteres no analizados.
+			var nVer = navigator.appVersion;
+			var nAgt = navigator.userAgent;
+			var browserName  = navigator.appName;
+			var fullVersion  = ''+parseFloat(navigator.appVersion); 
+			var majorVersion = parseInt(navigator.appVersion,10);
+			var nameOffset,verOffset,ix;
+			
+			if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+				browserName = "Microsoft Internet Explorer";
+				fullVersion = nAgt.substring(verOffset+5);
+				     }
+			else if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+					 browserName = "Opera";
+					 fullVersion = nAgt.substring(verOffset+6);
+					 }
+			else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+					  browserName = "Chrome";
+				      fullVersion = nAgt.substring(verOffset+7);
+					 }
+			else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+					  browserName = "Safari";
+					  fullVersion = nAgt.substring(verOffset+7);
+					 }
+			else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+					  browserName = "Firefox";
+					  fullVersion = nAgt.substring(verOffset+8);
+					 }
+			else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) < (verOffset=nAgt.lastIndexOf('/')) ){
+					browserName = nAgt.substring(nameOffset,verOffset);
+				    fullVersion = nAgt.substring(verOffset+1);
+				    if (browserName.toLowerCase()==browserName.toUpperCase()) {
+							browserName = navigator.appName;
+						}
+					}
+			if ((ix=fullVersion.indexOf(";"))!=-1) 
+			     fullVersion=fullVersion.substring(0,ix);
+			if ((ix=fullVersion.indexOf(" "))!=-1) 
+				fullVersion=fullVersion.substring(0,ix);
+			
+			majorVersion = parseInt(''+fullVersion,10);
+			if (isNaN(majorVersion)) {
+				 fullVersion  = ''+parseFloat(navigator.appVersion); 
+				 majorVersion = parseInt(navigator.appVersion,10);
+				}
+			document.write('&#10132;  Usas el navegador: '+browserName+', la versión: '+fullVersion);
+				//]]>
+			</script>
+			
+			<br>
+			<!-- Hasta aqui nombre y version del navegador -->
+
+			<!-- Pluggins instalados en el navegador -->
+            &#10132; Pluggins instalados en el navegador:
+			<a href="javascript:pinst();">Ver una lista de pluggins instalados</a><br>
+			<div id="pl"></div>
+				<script type="text/javascript">
+				//<![CDATA[
+				function pinst()
+				{
+					if(navigator.appName.indexOf("Microsoft Internet Explorer") != -1)
+					    {
+						 alert('Lo siento, solo esta disponible esa información para Firefox y Chrome');
+						}
+				    else
+					   {
+						var num_of_plugins=navigator.plugins.length;
+						
+						var ventana=window.open('','w','width=400,height=600,left=50,top=50');
+						
+						for(var i=0;i<num_of_plugins;i++){
+						    var list_number=i+1;
+							ventana.document.write(""+list_number+"- "+navigator.plugins[i].name+"  <br />")
+						   }
+						}
+				 }
+				     //]]>
+				</script>
+<!-- Hasta aqui Pluggins instalados en el navegador -->
+
+<!-- Medida de la pantalla del navegador web -->
+&#10132; Medida de la pantalla del navegador web:
+<script type="text/javascript">
+	document.write (document.documentElement.clientWidth,' x ',document.documentElement.clientHeight,' pixeles ');
+</script>
+<br>
+<!-- Hasta aqui Medida de la pantalla del navegador web -->
+
+<!-- Historial de navegación en este sitio -->
+&#10132; Historial de navegación en este sitio:
+<script type="text/javascript">
+  var times=history.length; document.write(+times+' paginas en esta sesión');
+</script>
+<br>
+<!-- Hasta aqui Historial de navegación en este sitio -->
+
+<!-- ¿Tu Navegador acepta Cookies? -->
+&#10132; ¿Tu Navegador acepta Cookies?
+<script type="text/javascript">
+if(navigator.cookieEnabled==true)
+	cookiesok="Está permitido";
+else if(navigator.cookieEnabled==false)
+		cookiesok="Olvídalo";
+else
+	cookiesok="Respuesta desconocida";
+document.write (cookiesok);
+
+</script>
+0<br>
+<!-- Hasta aqui ¿Tu Navegador acepta Cookies? -->
+
+<!-- ¿Tu Navegador acepta Java? -->
+&#10132; ¿Tu Navegador acepta Java?
+<script type="text/javascript">
+if(navigator.javaEnabled()==true)
+	javaok="Java está activa";
+else if(navigator.javaEnabled()==false)
+	    javaok="Java está desactivada";
+	 else
+		javaok="Respuesta desconocida";
+		
+document.write (javaok);
+
+</script><br>
+<!-- Hasta aqui ¿Tu Navegador acepta Java? -->
+
+<!-- Tu agente de usuario es -->
+&#10132; Tu agente de usuario es:
+<script type="text/javascript">document.write(navigator.userAgent);</script>
+<!-- Hasta aqui Tu agente de usuario es -->
+</div><br>
+
+<h4>Datos del equipo del usuario</h4>
+
+<div class="marco2">
+<!-- Ancho de la resolución de tu pantalla -->
+&#10132; Ancho de la resolución de tu pantalla: 
+<script type="text/javascript">document.write(window.screen.width, " pixeles")
+</script><br>
+<!-- Hasta aqui Ancho de la resolución de tu pantalla -->
+
+<!-- Altura de la resolución de tu pantalla -->
+&#10132; Altura de la resolución de tu pantalla:
+<script type="text/javascript">document.write(window.screen.height, " pixeles")
+</script><br>
+<!-- Hasta aqui Altura de la resolución de tu pantalla -->
+
+<!-- Profundidad del color en Bits -->
+&#10132; Profundidad del color en Bits:
+<script type="text/javascript">
+//<![CDATA[
+var colorDepth = window.screen.colorDepth;
+if (colorDepth == 4)
+	document.write("16 colors");
+else if (colorDepth == 8)	
+	document.write("256 colors");
+else if (colorDepth > 8)
+	document.write(colorDepth + " bits");
+else
+	document.write("Unknown");
+//]]>
+</script><br>
+<!-- Hasta aqui Profundidad del color en Bits -->
+
+<!-- Fecha actual -->
+&#10132; Fecha actual:
+<script type="text/javascript">
+	document.write (fechahoy());
+	
+	ahora=new Date();
+	
+	function fechahoy(){
+	
+		var diasemana=new Array('Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado');
+		var nombremes=new Array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+		var ahora;
+		var fecha=new Date();
+		var ano=fecha.getFullYear();
+		var mes=fecha.getMonth();
+		var dia=fecha.getDay();
+		var num=fecha.getDate();
+		ahora=diasemana[dia]+", "+num+" de "+nombremes[mes]+" de "+ano;
+		
+		return ahora;
+	}
+</script><br>
+<!-- Hasta aqui Fecha actual -->
+
+<!-- Hora local en tu PC -->
+&#10132; Hora local en tu PC:
+<span id="clock"></span>
+<script type="text/javascript">
+//<![CDATA[
+function doClock(){
+	
+	setTimeout("doClock()",1e3);
+	t=new Date;m=t.getMonth();
+	d=t.getDay();
+	dt=t.getDate();
+	y=t.getFullYear();
+	h=t.getHours();
+	if(h<12){
+		ap="AM"
+	}
+	else{
+		ap="PM";
+		h=h-12;
+	}
+	mn=pad(t.getMinutes());
+	s=pad(t.getSeconds());
+	
+	if(h==0){
+	   h=12
+	}
+	clockID.innerHTML="Ahora son las: "+h+":"+mn+":"+s+" "+ap}
+	
+	function pad(a){
+		if(a<10){
+			a="0"+a
+		}
+	return a
+	};
+	
+ clockID=document.getElementById('clock');doClock();
+ 
+ window.onload=function(){
+  doClock();
+  }
+//]]>
+</script><br>
+<!-- Hasta aqui Hora local en tu PC -->
+
+<!-- Tu zona horaria es -->
+&#10132; Tu zona horaria es:
+<script type="text/javascript">checkTimeZone();
+function checkTimeZone(){
+
+	var rightNow=new Date();
+	var rightNowString=rightNow.toString();
+	var lastColon=rightNowString.lastIndexOf(":");
+	var rightNowZone=rightNowString.substring(lastColon+4,rightNowString.length);
+	var rightNowZone=rightNowZone.replace(/ \d\d\d\d$/,"");
+	var rightNowZone=rightNowZone.replace(/ \d\d\d\d $/,"");
+	var date1=new Date(rightNow.getFullYear(),0,1,0,0,0,0);
+	var date2=new Date(rightNow.getFullYear(),6,1,0,0,0,0);
+	var temp=date1.toGMTString();
+	var date3=new Date(temp.substring(0,temp.lastIndexOf(" ")-1));
+	var temp=date2.toGMTString();
+	var date4=new Date(temp.substring(0,temp.lastIndexOf(" ")-1));
+	var hoursDiffStdTime=(date1-date3)/(1000*60*60);
+	var hoursDiffDaylightTime=(date2-date4)/(1000*60*60);
+	
+	if(hoursDiffDaylightTime==hoursDiffStdTime){
+		document.writeln(rightNowZone+", Usas el horario normal");
+	   }
+	else{
+		document.writeln(rightNowZone+", Usas el horario de verano");
+		}
+
+}
+</script><br>
+<!-- Hasta aqui Tu zona horaria es -->
+
+<!-- Sistema operativo -->
+&#10132; Sistema operativo:
+<script type="text/javascript">
+var OSName="Unknown OS";
+
+if (navigator.appVersion.indexOf("Win")!=-1) 
+    OSName="Windows";
+else if (navigator.appVersion.indexOf("Mac")!=-1) 
+		 OSName="MacOS";
+else if (navigator.appVersion.indexOf("X11")!=-1) 
+		 OSName="UNIX";
+else if (navigator.appVersion.indexOf("Linux")!=-1) 
+		 OSName="Linux";
+	
+document.write(OSName);
+</script><br>
+<!-- Hasta aqui Sistema operativo -->
+</div><br>
+
+<h4>Datos de esta página web</h4>
+
+<div class="marco2">
+<!-- Datos de la página web -->
+&#10132; Título de la página:
+<script type="text/javascript">document.write(document.title);</script><br>
+&#10132; Dirección URL completa de esta página:<br>
+<script type="text/javascript">document.write(document.URL);</script><br>
+&#10132; Fecha y hora de la última actualización:
+<script type="text/javascript">document.write(document.lastModified);</script><br>
+&#10132; Nombre del dominio:
+<script type="text/javascript">document.write(document.domain);</script><br>
+<!-- Hasta aqui Datos de la página web  -->
+</div><br>
+
+
+</script>	
+</body>
+</html>

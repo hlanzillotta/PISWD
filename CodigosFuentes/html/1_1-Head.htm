@@ -1,0 +1,145 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<!--ATRIBUTOS DE LA SECCIÓN HEAD 
+		    * dir : Especifica la dirección del texto, los valores posibles son :
+			        ltr (left to right), rtl (right to left).
+			* lang : Especifica el idioma base de los atributos y del texto contenido en 
+			         un elemento. Los valores posibles son: en,es,fr,etc.
+			* profile : Especifica la localización de uno o más perfiles de metadatos (URL).
+		-->
+		
+		
+		
+		
+		
+		<!-- tag <title> : Asigna un título al documento (es es texto de la solapa
+				   , es obligatoria. 
+		-->
+		<title>Ejemplo de tags HEAD  - html -</title>
+		
+		<!---------------------------------------------------------------------------->
+		
+		<!-- tag <base> : Define una ruta de acceso general para todo el documento,
+				          no es obligatoria. 
+						  En este caso indica que el directorio Imagenes, ubicado en 
+						  el direcorio raiz del sitio, es la ruta de acceso base general
+						  del documento, es decir que todos los archivos que se mencionen
+						  en el documento con el atributo src o href se van a buscar en
+						  dicha ruta.
+						  
+						  ATRIBUTOS del tag <base>
+						  ------------------------
+						  * href : Especifica la URL que será usada para todos los vínculos de    
+                                   la página.
+						  *target : Indica donde abrir el URL, los valores posibles son :
+                                    _blank = Nueva página.
+                                    _parent = En el frame y/o ventana.
+							     	_self = En la misma página.
+									_top = Modo completo.	
+		-->
+		<base href="./Imagenes/"> </base>
+		
+		<!---------------------------------------------------------------------------->
+		
+		<!-- tag <link> : Define archivos vinculados, sirve para indicar si el documento HTML
+		                  está relacionado con otro archivo o recurso externo, no es obligatoria.
+						  		  
+						  ATRIBUTOS del tag <link>
+						  ------------------------
+						   * charset : Especifica la codificación de caracteres.
+						               Ejemplo = utf-8, ISO-8859-1.
+						   * href : Especifica la localización de un recurso de la web.
+						   * hreflang : Especifica el lenguaje de la URL.
+						   * media : Especifica el medio para la info los valores posibles son: 
+						             screen,tty,tv,projection,handheld,print,all,etc.
+						   * rel : Especifica la relación entre el documento actual y el destino
+                                   del vínculo, ejemplo = alternate, designates,stylesheet,star, etc.
+                           * rev : Especifica la relación entre el destino del vínculo y el documento acual
+                                   (vínculo inverso), los valores posibles son idem rel 
+						   * target : Indica donde abrir el URL, los valores posibles son :
+                                    _blank = Nueva página.
+                                    _parent = En el frame y/o ventana.
+							     	_self = En la misma página.
+									_top = Modo completo.
+						   * type : Especifica el tipo de contenido a conectar.
+								   
+		-->		
+		
+		<!---------------------------------------------------------------------------->
+		
+		<link rel="stylesheet" type="text/css" href="./css/estilos.css"></link>
+		<!-- tag <meta> : Define metadatos como descripción y palabras clave, características
+ 		                  de la página. No es obligatoria.
+						  		  
+						  ATRIBUTOS del tag <link>
+						  ------------------------
+						   * name : Identifica un nombre de propiedad , indica al buscador
+						            el contenido de la página.
+						            Ejemplo = author, description, keywords, generator,revised,etc.
+						   * http-equiv : Los servidores HTTP utilizan este artículo para obtener info   
+						                  sobre los encabezados.
+                                          Ejemplo = content-type, refresh, set-cookie.
+                           * content : Especifica el valor de una propiedad (puede ser cualquier valor).
+                           * scheme : Proporciona a los agentes de USR más contexto para la interpretación
+                                      correcta de datos (puede ser cualquier valor). 
+						   * charset : Especifica la codificación de caracteres.
+						               Ejemplo = utf-8, ISO-8859-1.  	
+								   
+		-->	
+		<meta name="description" charset="utf-8" http-equiv="Cache-control" content="No-Cache"  />
+	
+		<!---------------------------------------------------------------------------->
+		
+		<!-- tag <script> : Delimita los scripts incluídos, sirve para incluír código en 
+		                    lenguajes script (lenguaje que los navegadores son capaces de reconocer
+							e interpretar). No es obligatoria.
+						  		  
+						    ATRIBUTOS del tag <link>
+						    ------------------------
+						    * src : Identifica la localización de un script externo - URL -
+						    * type : Especifica el lenguaje script de los contenidos del elemento.
+                            * language : Especifica el tipo de lenguaje, los valores posibles son = 
+						                 javascript,livescript,vbscript,etc.
+                            * defer : Indica el agente de USR que el script no va generar ningún contenido             
+                                     en el documento.						   
+		-->
+		<script src="./js/javascript.js" type="text/javascript" language="javascript"></script>
+		<script>
+			
+			//código de javascript.
+			
+			//Esta función está definida en el archivo javascript.js
+			MostrarMensaje("Ejemplo de la sección HEAD - Script");
+		
+		</script>
+		
+		<!---------------------------------------------------------------------------->
+		
+		
+		<!-- tag <style> : Delimita la definición de estilos. Sirve para incluír estilos 
+                      	   css que perminten dotar de colores, bordes, imágenes,etc.
+ 						   a los elementos de la página web. No es obligatoria.
+		-->
+		<style>
+			img{
+			    /* todos los elementos img del documento tendrán una anchura de 50 píxeles y
+   				    una altura de 10 píxeles.  
+				*/
+				width:50 px; /* Anchura */
+			    height:10 px /* Altura */;
+				
+				}
+		</style>
+		
+		<!---------------------------------------------------------------------------->
+		
+	</head>
+	
+	
+	<body>
+			<h1>imagen</h1><br>
+			<center><img src="imagen.jpg"/></center>
+	</body>
+	
+</html>

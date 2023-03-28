@@ -1,0 +1,10 @@
+DELIMITER $$ (o cualquiera)
+
+create procedure <nombre> ()
+begin 
+
+  .....
+
+end $$ (o cualquiera)
+
+DELIMITER ;

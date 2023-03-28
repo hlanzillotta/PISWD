@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de React JS</title>
+		<script src="./js/react.min.js"></script>
+		<script src="./js/react-dom.min.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+		<!--<script src="./js/babel.min.js"></script>-->
+	</head>
+	<body>
+			
+			<center><h1><u>Ejemplo de React JS</u></h1></center>
+			<div id="division"></div>
+			
+			
+			<script type="text/babel">
+		  
+			 //Crear un componente llamado Hello.
+			 class Hello extends React.Component {
+				
+				constructor(){
+				     super();//Llamar al contructor de React.Coponent.
+					 this.state= {
+						mensaje:"Hola"
+					 };
+				}
+				//Descripción de lo que se pretende dibujar.
+				render() {
+					 return (
+					          <div>
+								<h1> {this.props.mensaje}</h1>
+								<button onclick={this.props.mensaje} >Hacer Clic !</button>
+							  </div>
+							)
+					        ;
+				}
+			}	
+			
+			//Dibujar en la página.
+			ReactDOM.render(
+				<Hello 
+					mensaje= "Componente creado con React JS" />, 				
+				document.getElementById("division")
+				);
+			 
+				
+			</script>
+			
+
+	</body>
+</html>

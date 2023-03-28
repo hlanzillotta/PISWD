@@ -1,0 +1,39 @@
+use <nombre de la BDD>;
+
+DELIMITER //
+
+DROP PROCEDURE IF EXISTS Prueba1//
+CREATE PROCEDURE Prueba1 (in id_nivel smallint(1))  
+
+BEGIN
+	
+	
+	 /*SENTENCIAS SQL.*/
+	
+	
+  
+END//
+
+
+DROP PROCEDURE IF EXISTS Prueba2//
+CREATE PROCEDURE Prueba2 (in id_nivel smallint(1))  
+
+BEGIN
+	
+	
+	/*SENTENCIAS SQL.*/
+
+	
+	
+  
+END//
+
+
+delimiter ;
+
+
+
+/*************************INVOCAR O LLAMAR AL PROCEDURE***************************************/
+
+call <nombre del procedure> (parámetros o vacío);
+

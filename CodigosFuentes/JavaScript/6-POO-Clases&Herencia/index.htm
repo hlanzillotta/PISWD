@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"></meta>
+		<script src="./JS/Clases.js" type="text/javascript"></script>
+	<head>
+	<body>
+		
+		<center><h1><u>EJEMPLO DE POO - Clases y Herencia EN JAVASCRIPT</u></h1></center>
+		<script>
+			
+			document.write("<b><u>Instancia de Persona</u></b><br><br>");
+			
+			//Instanciar una referencia de la class Persona bajo el objeto p
+			var p = new Persona("Hernán","Lanzilotta");//Se ejecuta el constructor parametrizado.
+			
+			//Enviar mensajes a la clase Persona.
+			document.write(p.getNombre()+"\t");//Llama al método getNombre.
+			document.write(p.getApellido()+"<br><br>");//Llama al método getApellido.
+			p.setNombre("Julio");//Llama al método setNombre.
+			p.setApellido("Ferri");//Llama al método setApellido.
+			p.mostrar();//Llama al método mostrar.
+			
+			document.write("<br><br><br>");
+            document.write("<b><u>Instancia de Empleado</u></b><br><br>");
+			
+			//Instanciar una referencia de la class Empleado bajo el objeto e-resize
+            var e = new Empleado("Diego","Lopez",15000.00);
+            
+			e.mostrar();//Llamar al método mostrar de la clase Empleado.
+  			e.setSueldo(20000.00);
+			document.write("<br><br><br>");
+			e.mostrar();
+		    //alert(e.#sueldo); //ERROR NO SE PUEDE ACCEDER DESDE EL EXTERIOR A UN ATRIBUTO PRIVADO DE UNA CLASE.
+			
+						
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,6 @@
+Crear base de datos Prueba
+
+Crear Tabla Persona con tres campos :
+	Nro de Documento
+	Nombre y Apellido
+	Edad

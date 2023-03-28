@@ -1,0 +1,96 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Ejemplo sección body</title>
+		<meta charset="utf-8">
+		<script>
+			var texto="El script corre cuando el ";
+		</script>
+		<style>
+			.CajaDeTextoSimple{font-size:100px;
+			                   font-style:bold;
+							   }
+		</style>
+	</head>	
+	<body  lang="es"
+	       title="Ejemplo de propiedades y eventos de los elementos"
+	       
+	       onload = "alert( texto +  'elemento es cargado.');"
+	       onreset = "alert( texto + 'formulario se reinicia.');"
+		   onsubmit = "alert( texto + 'formulario es enviado.');"
+           onkeydown = "alert( texto + 'usuario pulsa una tecla');"
+		   onkeyup ="alert( texto + 'usuario suelta una tecla..');"
+		   onkeypress="alert( texto + 'usuario presiona y suelta  una tecla.');"		   
+	>
+			<!-- 
+			     ATRIBUTOS COUMUNES A TODOS LOS ELEMENTOS
+                 ----------------------------------------
+				 
+				 class = Nombre de la clase.
+                 id = Identificador del elemento.
+               	 style = Especifica info del estilo para el elemento actual.
+				 title = Ofrece info consultiva sobre el elemento para el cual se establece.
+				 dir = Especifica la dirección del texto.	
+			     lang = Especifica el idioma base de los valores de los atributos y del texto               
+				        contenido en un elemento.
+						
+			    EVENTOS COMUNES A TODOS LOS ELEMENTOS 
+				-------------------------------------
+				
+				//EVENTOS DEL FORMULARIO
+				  onload = "alert( texto +  'elemento es cargado.');"
+				            NOTA : Generalmente funciona con <body>
+				  onunload = "alert( texto + 'usuario elimina un documento de una ventana o marco.');"
+				              NOTA : Este evento solo funciona en IE. Problema de compatiblidad con 
+							         el resto de los navegadores.
+							  
+				  onreset = "alert( texto + 'formulario se reinicia.');"
+				  onsubmit = "alert( texto + 'formulario es enviado.');"
+				 
+				 //EVENTOS DEL TECLADO
+				  onkeydown = "alert( texto + 'usuario pulsa una tecla');"
+				  onkeyup ="alert( texto + 'usuario suelta una tecla..');"
+				  onkeypress="alert( texto + 'usuario presiona y suelta  una tecla.');"
+				 
+				 //EVENTOS DEL ELEMENTO
+				  onblur = "alert( texto + 'elemento pierde el foco.');"
+				  onchange ="alert( texto + 'elemento cambia.');"
+				  onfocus="alert( texto + 'elemento gana el foco.');"	
+				 
+				 //EVENTOS DEL MOUSE
+				  onclick="alert( texto + 'se hace clic con el botón del mouse.');"	
+				  ondblclick="alert( texto + 'se hace doble clic con el botón del mouse.');"	
+				  onmousedown="alert( texto + 'el botón del mouse se pulsa cuando está encima de un elemento.');"	
+				  onmouseup="alert( texto + 'el botón del mouse se suelta cuando está encima de un elemento.');"
+				  onmousemove="alert( texto + 'el botón del mouse se mueve mientras está sobre un elemento.');"
+				  onmouseout="alert( texto + 'mouse se aparta de un elemento.');"
+				  onmouseover="alert( texto + 'mouse se sitúa sobre un elemento.');"
+				
+				//EVENTO GENERAL
+				onselect="alert( texto + 'elemento se selecciona.');"
+			-->	
+			
+			<form method="get"  onunload="alert('unload');" style="background-color:red;">
+				Usuario<input dir="rtl" class="CajaDeTextoSimple" type="text" 
+				              onblur = "alert( texto + 'elemento pierde el foco.');" 
+				              onchange ="alert( texto + 'elemento cambia.');" 
+							  onfocus="alert( texto + 'elemento gana el foco.');"
+							  onmouseout="alert( texto + 'mouse se aparta de un elemento.');"
+					          onmouseover="alert( texto + 'mouse se sitúa sobre un elemento.');"							  
+							   > <br>
+				<input id="BotonResetear" type="reset" 
+				       onclick="alert( texto + 'se hace clic con el botón del mouse.');"
+					   onfocus="alert( texto + 'elemento gana el foco.');"  
+					   
+					   value="Resetear"/>
+				
+				<input  type="submit"   value="Enviar"
+				        ondblclick="alert( texto + 'se hace doble clic con el botón del mouse.');" 
+					    onmousedown="alert( texto + 'el botón del mouse se pulsa cuando está encima de un elemento.');"	
+						onmouseup="alert( texto + 'el botón del mouse se suelta cuando está encima de un elemento.');"
+						onmousemove="alert( texto + 'el botón del mouse se mueve mientras está sobre un elemento.');"
+				/>
+			</form>
+	</body>
+	
+</html>

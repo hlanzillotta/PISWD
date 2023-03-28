@@ -1,0 +1,281 @@
+/******************************************************************************************************** 
+										CSS (CASCADING STYLE SHEETS)
+										----------------------------
+	
+	0)CSS ES UN DOCUMENTO FORMADO POR IDENTIFICADORES, EN LAS CUALES CADA UNO ESTÁ COMPUESTO POR UNA O 
+	  UN CONJUNTO DE REGLAS.
+	  
+	1)FORMATO GENERAL DE REGLA para CSS :  
+	        <SELECTOR>{
+				       <PROPIEDAD_1> : <VALOR>;
+			           <PROPIEDAD_2> : <VALOR>;
+					   <PROPIEDAD_3> : <VALOR>;
+					         .
+							 .
+							 .
+					   <PROPIEDAD_N> : <VALOR>;		 
+					  }
+			
+			NOTA : Cada regla puede tener uno ó muchos selectores, lo mismo sucede con 
+			       las propiedades. El separador de selector es la coma (,). 
+    
+	2)COMENTARIO en css : /* texto..   */ 
+    
+	/*
+    3)LOS COLORES EN CSS SE PUEDEN ASIGNAR CON EL NOMBRE DEL COLOR O CON EL VALOR EXPRESADO
+      EN HEXADECIMAL.	
+
+***********************************************************************************************************/
+
+
+/*--------------------------------------SELECTORES--------------------------------------*/
+
+/*LOS SELECTORES PUEDEN SER : UNIVERSAL, DE TIPO, DE CLASE, IDENTIFICADOR*/
+
+/*SELECTOR UNIVERSAL : Se corresponde con todos los elementos en el documento.*/
+*{
+	font-size:1.5 em;/*em = Unidad relativa respecto del tamaño de letra del elemento*/
+	background-color : #fffff;/*Estable el color blanco como color de fondo*/
+}
+
+/*SELECTOR DE TIPO : Se corresponde con todos los elementos en el documento que tienen el tipo especificado*/
+p{
+	margin-left:0;      /*Define el margen izquierdo en cero.*/
+	padding-left:2em;   /*Establece la anchura de izquierda del elemento en 2 * píxel de pantalla*/
+	text-align:justify; /*Establece el alineamiento del texto en justificado*/
+}
+
+
+/*SELECTOR DE CLASE : Define diferentes estilos para un mismo o cualquier elemento HTML.*/
+p.azul {color: blue;}
+p.rojo{color:red;}
+.amarillo{color:yellow;}
+
+/*SELECTOR DE IDENTIFICADOR : Se utiliza para definir un atributo el cual tiene un valor único
+                              en todo el documento.   
+*/  
+
+#Centrado {text-align:center;}
+h1#Subrayado{text-decoration:underline;}
+
+
+/*--------------------------------------COLORES Y FONDOS DE PANTALLA--------------------------------------*/
+
+body{background-color:#FC9804; /*Define color de fondo anaranjado del cuerpo de la página.*/}
+
+.ImagenDeFondo{
+	background-color:red; /*Determina el Color de fondo*/
+	background-image: url("imagen.jpg"); /*Establece la imagen de fondo*/
+	background-repeat: repeat-y; /* Repite la imagen de fondo, valores posibles:repeat-y,no-repeat,repeat.*/
+	background-attachment:scroll; /*Determina si la imagen está fija o se desplaza, los valores posibles son:scroll y fixed*/
+	background-position:center; /*Determina la posición de la imagen, los valores posibles son: top, bottom,center,left,right
+	                              también se puede indicar con unidades de medida (px,%,pc,etc.)
+								*/
+	/*LA PROPIEDAD background SE PUEDE EXPRESAR EN LA MISMA LÍNEA COMBINANDO TODAS LAS PROPIEDADES*/
+	/*background:red  url("imagen.jpg") repeat-y scroll center;*/
+	
+	width:100%;
+	height:100px;
+	 
+	}
+
+h1,h2,h3,h4,h5,h6{
+	color:white; /*Define como color principal el blanco para el encabezado 1*/
+	background-color : #aabbcc; /*Define como color de fondo el anaranjado para el encabezado 1*/
+ }
+
+/*--------------------------------------FUENTES------------------------------------------------*/
+
+h1{font-family:arial,verdana,sans-serif;/*Los encabezados con <h1> se mostrarán usando la fuente
+                                           arial, si no está instalada en el computador se utilizará
+                                           la fuente verdana, en caso contrario se utilizará una fuente 
+                                           de la familia sans-serif. 										   
+										*/
+  font-style:italic; /*Todos los encabezados se muestran en cursiva.*/ 	
+  font-variant:small-caps; /*Se utiliza para elegir variantes de una fuente     
+                             Los valores posibles son: SMALL-CAPS,NORMAL.
+							 SMALL-CAPS (Versalitas) = Son utilizadas en títulos cuando la 
+                                                       regla está fijada en este valor se 
+                                                       proveen los caracteres en mayúsculas
+                                                       pequeñas, en caso contrario el navegador
+                                                       redimensionará las mayúsculas a la altura 
+                                                       de las minúsculas. 													   
+ 							
+							*/  
+	
+ font-weight:bold; /*Determina la intensidad o peso de la fuente, este caso lo setea en Negrita.*/
+ font-size: 50px; /*Determina el tamaño de la fuente. En este caso el tamaño de la fuente es de 50 píxeles.*/
+ 
+ /*LA PROPIEDAD font SE PUEDE EXPRESAR EN LA MISMA LÍNEA COMBINANDO TODAS LAS PROPIEDADES*/
+ /*font: italic bold 50px arial,verdana,sans-serif ;*/
+ 
+ }
+ 
+/*--------------------------------------TEXTO----------------------------------------------------*/
+ 
+ .Parrafo{
+	 
+	text-indent:30px;/*Se aplica sangría de 30px a todos los párrafos.*/
+    text-align:left; /*Ya explicado en línea 28, valores posibles:left,right,center,justify.*/	
+    text-decoration:overline;/*Define decoraciones o efectos al texto. Valores posibles: underline,overline,line-through*/
+    letter-spacing:3px; /*Define un espaciado de texto de 3px*/
+	text-transform:capitalize;/*Controla la escritura mayúsculas de un texto.
+	                            Los valores posibles son:CAPITALIZE,UPPERCASE,LOWERCASE,NONE.
+								CAPITALIZE = Pone en mayúscula la primera letra de cada palabra.
+								UPPERCASE = Pone todas las letras en mayúsculas.
+								LOWERCASE = Pone todas las letras en minúsculas.
+								NONE = No se realiza transformación.
+							   */
+   }
+
+
+/*--------------------------------------ENLACES-------------------------------------------------*/   
+ 
+ /*PSEUDO-CLASE : Permite tener en cuenta diferentes condiciones o eventos al definir una 
+                  propiedad para una etiqueta html.
+                  Ejmplos : link,visited,hover,active. 				  
+ */
+ 
+ a:link{ color:blue;} /*Enlace no visitado*/
+ 
+ a:active {background-color:#FFFF00;} /*Enlace activo, color de fondo amarillo.*/
+ 
+ a:hover{color:red; 
+         font-style:italic;
+		}/* Se activa cuando el USR pasa el mouse por encima del elemento.*/
+ 
+ a.visited{color:red;} /*Enlace visitado*/
+ 
+ 
+/*--------------------------------------MODELO DE CAJA--------------------------------------*/ 
+body{
+	
+	/*Definición de márgenes*/
+	margin-top:100px;   /*Margen superior*/
+	margin-right:40px;  /*Margen derecho*/
+	margin-bottom:10px; /*Margen inferior*/
+	margin-left:70px;   /*Margen izquierdo*/ 
+
+    /*Se puede definir el margen en una sola línea combinando las propiedades*/
+	/*body{margin: 100px 40px 10px 70px;}*/
+	
+	/*Definición de Relleno*/
+	padding-top:5px;
+	padding-right:10px;
+	padding-bottom:15px;
+	padding-left:20px;
+	/*Se puede definir el margen en una sola línea combinando las propiedades*/
+	/*body{padding: 5px 10px 15px 20px;}*/
+	
+	/*Definición de Bordes*/
+	border-width:5px; /*Establece la anchura del borde en 5 píxeles ,los valores posibles son:
+	                    1px,2px,3px,4px,5px, thin,medium,thick,etc.
+	                  */
+					  
+	border-color:#123456; /*Define el color del borde en azul*/
+	
+	border-style:dashed; /*Define el estilo de borde en estilo línea entre cortada, los valores posibles son:
+	                       dotted,dashed,solid,double,groove,ridge,inset,outset.
+						 */
+	}
+	
+/*--------------------------------------ALTURA/ANCHURA--------------------------------------*/
+
+.Anchura_Anchura_Div{
+	width:300px; /*Define una anchura del bloque de texto en 100 píxeles.*/
+	height:100px;/*Define una antura del bloque de texto en 100 píxeles.*/
+	
+}
+
+.BordeSolido,.Anchura_Anchura_Div{border:5px solid green;background-color:yellow;}
+
+/*--------------------------------------ELEMENTOS FLOTANTES--------------------------------------*/ 
+#Flotante {
+	float:right; /*Hace flotar el elemento hacia el margen izquiero, los valores posibles 
+	               de float son : none,left,right,initial,inherit
+                   none = El elemento no flota.
+                   left = El elemento flota hacia la izquierda.
+                   right = El elemento flota hacia la derecha.
+				   initial = Setea la propiedad float a su valor predeterminado.
+				   inherit = Hereda la propieda float del elemento padre.		
+				  */
+}
+
+#Columna1 {
+	float :left;
+	width:33%;
+}
+
+#Columna2 {
+	float :left;
+	width:33%;
+}
+
+#Columna3 {
+	float :left;
+	width:33%;
+}
+
+
+#imagen {
+	     float:left;
+         width:0%;
+		 height:10px;
+		}
+.floatstop {clear:both;/* Se utiliza para controlar cómo se comportarán los elementos que 
+                         siguen a los elementos flotados en el documento. La propiedad clear              
+						 puede tormar los siguientes valores : left, right,both,none.
+                         both : Para una caja, el borde del margen superior de esta caja estará
+                                debajo del borde del margen inferior para las posibles cajas 
+                                flotantes que vengan de arriba.								
+                         */
+           }
+
+/*--------------------------------------POSICIONAMIENTO DE ELEMENTOS --------------------------------------*/ 
+h2{
+	position:absolute; /*Posiciona la cabecera a 100% del borde superior en forma absoluta.
+                         No deja espacio vacío después de ser posicionado.
+						 
+	                     Los valores posibles de position son : static,absolute,fixed,relative,initial,inherit
+					     static = Valor por defecto, los elementos se organizan en orden.
+						 absolute = Los elementos se posicionan en forma relativa a la primera posición.
+						 fixed = Los elementos se posicionan en forma relativa a la ventana del navegador.
+						 relative = Los elementos se posicionan en forma relativa a la posición normal.
+					     initial = Setea el valor predeterminado por defecto.
+						 inherit = Hereda la propieda position del elemento padre.
+					   */
+	top:100%;
+}
+
+#PosicionamientoRelativo{
+	
+	position:relative; /*La posición se debe calcular dede la posición original en el documento    
+	                     El documento sigue ocupando espacio en el documento después de haberse
+						 posicionado.
+					   */
+	background-color:gray;
+	
+}
+
+/*--------------------------------------SUPERPOSICIÓN DE ELEMENTOS --------------------------------------*/ 
+
+/* La propiedad z-index permite superponer elementos por medio de un número, el número más
+   grande es el que se superpone primero.
+*/
+
+.Superposicion1{
+	
+	position:absolute;
+	left:90px;
+	z-index:1; /*Imagen de atrás*/
+	
+}
+
+.Superposicion2{
+	
+	position:absolute;
+	left:110px;
+	z-index:2; /*Imagen de frente o preponderante*/
+	height:50px;
+	
+}

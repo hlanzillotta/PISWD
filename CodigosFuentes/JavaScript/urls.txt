@@ -1,0 +1,12 @@
+https://norfipc.com/inf/javascript-codigos-para-mostrar-informacion-datos-lectores-paginas.html
+
+https://desarrolloweb.com/articulos/826.php
+http://www.maestrosdelweb.com/diez-funciones-imprescindibles-en-javascript/
+https://developer.mozilla.org/es/docs/Web/JavaScript/Introducci%C3%B3n_a_JavaScript_orientado_a_objetos
+https://www.desarrolloweb.com/articulos/846.php
+
+OBJETOS EN JAVASCTIPT
+https://developer.mozilla.org/es/docs/Web/JavaScript/Introducci%C3%B3n_a_JavaScript_orientado_a_objetos
+
+LOS MEJORES 10 FRAMWORKS DE JAVASCRIPT
+https://ifgeekthen.nttdata.com/es/los-mejores-javascript-frameworks

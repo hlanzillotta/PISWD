@@ -1,0 +1,5 @@
+
+$('#Txt_num').attr('max','800');
+
+
+alert($('#Txt_num').attr('max'));

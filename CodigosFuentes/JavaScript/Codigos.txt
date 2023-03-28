@@ -1,0 +1,47 @@
+/*var objeto={
+			     
+                a:1,
+				b:2,
+								
+			
+			}
+			document.write(objeto.c);*/
+			/*
+			function Persona(nombre, edad) {
+				  this.nombre = nombre;
+				  this.edad = edad;
+				  
+			}
+			Persona.prototype.toString = function() {
+				return "[Persona: " + this.nombre + "]";
+			}
+
+			Persona.prototype.saludar = function() {
+			console.log("Hola mi nombre es: " + this.nombre);
+		    }
+			
+			Persona.prototype.generarCodigo = function(){
+				console.log("Codigo = 123");
+			}
+			
+		var p = new Persona("Hernán", 41);//Crear una instancia de la Persona.
+		
+		/*console.log(p.nombre); // propiedad del objeto
+		console.log(p.toString()); // propiedad no encontrada directamente en el objeto
+        console.log(p.generarCodigo()); 	
+        console.log(typeof(p));		
+		eval(); */
+		
+		var displayClosure = function() {
+    var count = 0;
+	 document.write("Pasa1" +"<br>");
+    return function () {
+         document.write("Pasa2" +"<br>");
+		 return ++count;
+    };
+}
+var inc = displayClosure();
+//inc(); // devuelve 1
+//inc(); // devuelve 2
+//a=inc(); // devuelve 3
+document.write(a);

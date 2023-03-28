@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Ejemplo sección footer</title>
+		<meta charset="utf-8">
+	</head>	
+	<body>
+		<form method="get"  onunload="alert('unload');" style="background-color:red;">
+				Usuario<input dir="rtl" class="CajaDeTextoSimple" type="text" 
+				              onblur = "alert( texto + 'elemento pierde el foco.');" 
+				              onchange ="alert( texto + 'elemento cambia.');" 
+							  onfocus="alert( texto + 'elemento gana el foco.');"
+							  onmouseout="alert( texto + 'mouse se aparta de un elemento.');"
+					          onmouseover="alert( texto + 'mouse se sitúa sobre un elemento.');"							  
+							   > <br>
+				<input id="BotonResetear" type="reset" 
+				       onclick="alert( texto + 'se hace clic con el botón del mouse.');"
+					   onfocus="alert( texto + 'elemento gana el foco.');"  
+					   
+					   value="Resetear"/>
+				
+				<input  type="submit"   value="Enviar"
+				        ondblclick="alert( texto + 'se hace doble clic con el botón del mouse.');" 
+					    onmousedown="alert( texto + 'el botón del mouse se pulsa cuando está encima de un elemento.');"	
+						onmouseup="alert( texto + 'el botón del mouse se suelta cuando está encima de un elemento.');"
+						onmousemove="alert( texto + 'el botón del mouse se mueve mientras está sobre un elemento.');"
+				/>
+			</form>
+	</body>
+	
+	<footer >
+		<!-- 
+		     <footer> Reprensenta un pié de página al contenido de sección más cercano al      
+		     elemento raíz de sección, por ejemplo : <address> ,<article>,<aside>,<nav>,<sectio>,<blockquote>,
+             <body>,<details>,<fieldset>,<figure>,<td>.
+             No tiene atributos y no introduce una nueva sección. 
+		-->
+		<address align="center" style="top:100%;margin-top:50%;background-color:violet;"> 
+			<hr>
+			autores .......<br>
+			contacto : mail@dominio<br>
+			nuestra página : ..... 
+			
+		</address>
+	</footer>

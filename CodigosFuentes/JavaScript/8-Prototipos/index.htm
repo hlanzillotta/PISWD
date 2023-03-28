@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"></meta>
+		<script src="./JS/Prototipos.js" type="text/javascript"></script>
+	<head>
+	<body>
+		
+		<center><h1><u>EJEMPLO DE PROTOTIPOS EN JAVASCRIPT</u></h1></center>
+		<script>
+			
+			//Mostar los valores de la propiedad del prototipo. 
+			//Acceso: nombre de variable.propiedad;
+			document.write("var1 = " + prototipo.var1 + "<br>");
+			document.write("var2 = " + prototipo.var2 + "<br>");
+			document.write("var3 = " +prototipo.var3 + "<br>");
+			document.write("var4 = " +prototipo.var4 + "<br><br>");
+			
+			//Crear una intancia de funcPrototipo.
+			var nombre = new funcPrototipo(10,20);
+			nombre.MetodoN();
+			nombre.Metodo1(50);
+			nombre.Metodo2(80);
+			nombre.MetodoN();
+			
+		</script>
+	</body>
+
+</html>

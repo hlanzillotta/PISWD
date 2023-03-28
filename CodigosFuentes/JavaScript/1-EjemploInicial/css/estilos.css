@@ -1,0 +1,39 @@
+
+/**********************SELECTORES DE TIPO ELEMENTO**************************/
+body{
+	
+	margin:0 auto;
+	overflow-y:hidden;/*OCULTAR BARRA VERTICAL.*/
+	/*overflow-X:hidden*/ /*--OCULTAR BARRA HORIZONTAL--*/
+	} 
+
+
+footer {
+	    
+		/*ANCHURA*/
+		width: 100%;
+		
+		/*ALTURA*/
+		height: 40px;
+		
+		/*POSICIONAMIENTO EN PANTALLA*/
+		position:absolute;
+		/*IMPORTANTE*/
+			bottom: 0 ;
+			bottom: 5px;
+		
+		/*ESTILOS*/
+		background-color:black;
+		color:white;
+        
+		/*ALINEAMIENTO DEL CONTENIDO*/
+		text-align:center;
+		
+	 }
+	 
+/**********************SELECTORES DE TIPO CLASE**************************/
+.Titulo{
+	
+		background-color:green;
+		color:white;
+}

